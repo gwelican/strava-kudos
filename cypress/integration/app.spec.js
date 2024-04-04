@@ -26,7 +26,7 @@ describe("Strava", () => {
 							cy.wrap($el)
 								.closest("[data-testid=web-feed-entry]")
 								.within(() => {
-									cy.get('a[data-testid="owner-avatar"]')
+									cy.get('a[data-testid="owner-name"]')
 										.invoke("attr", "href")
 										.then((ownerHref) => {
 											if (getAthleteId(ownerHref) !== getAthleteId(profileHref)) {
