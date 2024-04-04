@@ -1,5 +1,6 @@
 {
 	"baseUrl": "http://localhost:3000",
+	"projectId": "qfgi9n",
 	"env": {
 		"__comment_TODO": "Update Strava credential for local",
 		"STRAVA_USERNAME": "",
