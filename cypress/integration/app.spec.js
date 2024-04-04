@@ -22,17 +22,18 @@ describe("Strava", () => {
 					.invoke("attr", "href")
 					.then((profileHref) => {
 						cy.get(unfillKudoButtonSelector).each(($el) => {
-							cy.wrap($el)
-								.closest("[data-testid=web-feed-entry]")
-								.within(() => {
-									cy.get('a[data-testid="owner-avatar"]')
-										.invoke("attr", "href")
-										.then((ownerHref) => {
-											if (getAthleteId(ownerHref) !== getAthleteId(profileHref)) {
-												cy.wrap($el).should("exist").click({ force: true });
-											}
-										});
-								});
+							cy.wrap($el).should("exist").click({ force: true });
+							// cy.wrap($el)
+								// .closest("[data-testid=web-feed-entry]")
+								// .within(() => {
+								// 	cy.get('a[data-testid="owner-avatar"]')
+								// 		.invoke("attr", "href")
+								// 		.then((ownerHref) => {
+								// 			if (getAthleteId(ownerHref) !== getAthleteId(profileHref)) {
+								// 				cy.wrap($el).should("exist").click({ force: true });
+								// 			}
+								// 		});
+								// });
 						});
 					});
 			}
