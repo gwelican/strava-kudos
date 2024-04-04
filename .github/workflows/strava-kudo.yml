@@ -18,6 +18,8 @@ jobs:
         with:
           headless: true
           build: yarn build
+          record: true
+
         env:
           CYPRESS_BASE_URL: ${{ secrets.CYPRESS_BASE_URL }}
           CYPRESS_STRAVA_USERNAME: ${{ secrets.CYPRESS_STRAVA_USERNAME }}
