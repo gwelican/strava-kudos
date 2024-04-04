@@ -16,7 +16,8 @@ describe("Strava", () => {
 		cy.scrollTo("bottom", { duration: 1000 }).then(() => {
 			const unfillKudoButtonSelector = "[data-testid=unfilled_kudos]";
 			const profileSelector = "#athlete-profile a[data-testid='avatar-wrapper']";
-
+           		console.log(profileSelector)
+			console.log(unfillKudoButtonSelector)
 			if (Cypress.$(unfillKudoButtonSelector).length > 0) {
 				cy.get(profileSelector)
 					.invoke("attr", "href")
@@ -25,7 +26,7 @@ describe("Strava", () => {
 							cy.wrap($el)
 								.closest("[data-testid=web-feed-entry]")
 								.within(() => {
-									cy.get('a[data-testid="avatar"]')
+									cy.get('a[data-testid="owner-avatar"]')
 										.invoke("attr", "href")
 										.then((ownerHref) => {
 											if (getAthleteId(ownerHref) !== getAthleteId(profileHref)) {
