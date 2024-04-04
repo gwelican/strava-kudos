@@ -43,4 +43,10 @@ describe("Strava", () => {
 	});
 });
 
-const getAthleteId = (href) => href.split("/athletes/")[1];
+const getAthleteId = (href) => {
+	if (href) {
+		href.split("/athletes/")[1];
+	} else {
+		return "";
+	}
+}
