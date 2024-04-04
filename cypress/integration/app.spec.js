@@ -15,7 +15,7 @@ describe("Strava", () => {
 		// Kudos
 		cy.scrollTo("bottom", { duration: 1000 }).then(() => {
 			const unfillKudoButtonSelector = "[data-testid=unfilled_kudos]";
-			const profileSelector = "#athlete-profile";
+			const profileSelector = "#athlete-profile a[data-testid='avatar-wrapper']";
 
 			if (Cypress.$(unfillKudoButtonSelector).length > 0) {
 				cy.get(profileSelector)
